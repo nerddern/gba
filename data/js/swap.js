@@ -105,6 +105,10 @@ if (useCust == true) {
         custType = 2;
         localStorage.setItem("custType", JSON.stringify(custType));
     }
+    if (gameCoreType == "n64"){
+        custType = 3;
+        localStorage.setItem("custType", JSON.stringify(custType));
+    }
    
 } else if (useCust == false) {
     custType = 0;
@@ -122,4 +126,17 @@ if (custType == 2) {
     let gameLink = custHost + "nes-alt/" + gameName + ".nes.zip";
     gameName = gameLink;
     console.log(gameLink);
+}
+
+if (custType == 3) {
+    gameName = gameText;
+    let gameLink = custHost + "n64-alt/" + gameName + ".7z";
+    gameName = gameLink;
+    console.log(gameLink);
+}
+
+let isDistrict = localStorage.getItem("district");
+if (isDistrict == "1") {
+    gameName += "?palmbeach.k12.fl.us";
+    console.log(gameName);
 }
